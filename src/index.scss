@@ -1,0 +1,49 @@
+* {
+	box-sizing: border-box;
+}
+
+:root {
+	--font: "Space Grotesk", sans-serif;
+
+	--color-white: hsl(0, 0%, 100%);
+	--color-grayish: hsl(279, 6%, 55%);
+	--color-grayish-lighten: hsl(270, 3%, 87%);
+	--color-grayish-darken: hsl(278, 68%, 11%);
+
+	--color-primary: hsl(249, 99%, 64%);
+	--color-primary-active: hsl(278, 94%, 30%);
+}
+
+body {
+	color: var(--color-grayish-darken);
+	background-color: var(--color-white);
+	font-family: var(--font);
+	font-weight: 400;
+	font-size: 16px;
+	letter-spacing: 2px;
+	height: 100vh;
+	line-height: 1.15;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+button {
+	padding: 0;
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+	color: inherit;
+}
+
+input {
+	border: none;
+	outline: none;
+	color: inherit;
+	font-family: inherit;
+	letter-spacing: 1px;
+	font-size: inherit;
+}
+

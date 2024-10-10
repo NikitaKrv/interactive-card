@@ -1,0 +1,267 @@
+.card {
+	width: 50%;
+	text-shadow: 7px 6px 10px rgba(14, 42, 90, 0.8);
+	position: relative;
+
+	@media (max-width: 1080px) {
+		display: flex;
+		flex-direction: column-reverse;
+		width: 100%;
+	}
+
+	label {
+		cursor: pointer;
+		z-index: 9;
+	}
+}
+
+.itemFocus {
+	position: absolute;
+	z-index: 3;
+	border-radius: 5px;
+	left: 0;
+	top: 0;
+	width: 80%;
+	height: 100%;
+	transition: all 0.35s cubic-bezier(0.71, 0.03, 0.56, 0.85);
+	opacity: 0;
+	pointer-events: none;
+	overflow: hidden;
+	border: 2px solid rgba(255, 255, 255, 0.65);
+
+	&:after {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		background: rgb(8, 20, 47);
+		height: 100%;
+		border-radius: 5px;
+		filter: blur(25px);
+		opacity: 0.5;
+	}
+
+	&.active {
+		opacity: 1;
+	}
+}
+
+.cardFront, .cardBack {
+	width: 28rem;
+	height: 15.5rem;
+	border-radius: 10px;
+	padding: 22px 17px;
+	position: relative;
+	background-repeat: no-repeat;
+	color: var(--color-white);
+	background-size: cover;
+	background-position: center;
+	box-shadow: 0 20px 60px 0 rgba(14, 42, 90, 0.55);
+
+	@media (max-width: 1080px) {
+		box-shadow: 0 20px 60px 0 rgba(239, 239, 239, 0.5);
+	}
+
+	@media (max-width: 540px) {
+		width: 23rem;
+		height: 15.5rem;
+	}
+
+	@media (max-width: 410px) {
+		width: 20rem;
+	}
+}
+
+.cardFront {
+	background-image: url("/bg-card-front.png");
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	gap: 24px;
+	text-transform: uppercase;
+	margin: 0 auto 36px;
+	box-shadow: 0 20px 60px 0 rgba(239, 239, 239, 0.5);
+
+	@media (max-width: 1080px) {
+		box-shadow: 0 20px 60px 0 rgba(14, 42, 90, 0.55);
+		z-index: 99;
+		top: 50px;
+		margin-left: 1rem;
+		left: 0;
+	}
+
+	&:before {
+		content: url("/card-logo.svg");
+		position: absolute;
+		top: 32px;
+		left: 32px;
+	}
+}
+
+.frontBottom {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 14px;
+
+	@media (max-width: 540px) {
+		font-size: 12px;
+	}
+}
+
+.number {
+	font-size: 28px;
+	display: flex;
+	justify-content: space-between;
+	position: relative;
+	padding: 10px 15px;
+
+	@media (max-width: 540px) {
+		font-size: 16px;
+	}
+}
+
+.numberColumn {
+	width: calc(100% / 19);
+	display: flex;
+	justify-content: center;
+}
+
+.name {
+	width: 80%;
+	white-space: nowrap;
+}
+
+.nameRow {
+	display: flex;
+
+	.nameRowItems {
+		padding: 10px 15px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		text-transform: uppercase;
+
+		span {
+			display: inline-block;
+			min-width: 6px;
+			position: relative;
+		}
+	}
+}
+
+.date {
+	display: flex;
+	justify-content: space-between;
+	padding: 10px 15px;
+
+	label > div {
+		display: flex;
+		justify-content: center;
+		min-width: 22px;
+
+		span {
+			display: flex;
+			min-width: 11px;
+			justify-content: center;
+		}
+	}
+}
+
+.cardBack {
+	background-image: url("/bg-card-back.png");
+	margin: 0 1rem 0 auto;
+
+	@media (max-width: 1080px) {
+		top: 100px;
+	}
+
+	label {
+		position: absolute;
+		font-size: 18px;
+		top: 100px;
+		right: 40px;
+		padding: 10px 15px;
+	}
+}
+
+.cvc {
+	span {
+		display: inline-flex;
+		justify-content: center;
+		min-width: 14px;
+		@media (max-width: 540px) {
+			font-size: 12px;
+		}
+	}
+}
+
+.slideFadeUpEnter {
+	transform: translateY(15px);
+	opacity: 0;
+}
+
+.slideFadeUpEnterActive {
+	transition: all 0.25s ease-in-out;
+	transition-delay: 0.1s;
+	transform: translateY(0px);
+	position: relative;
+	opacity: 1;
+}
+
+.slideFadeUpLeave {
+	transform: translateY(0);
+	opacity: 1;
+}
+
+.slideFadeUpLeaveActive {
+	transition: all 0.25s ease-in-out;
+	transform: translateY(-15px);
+	position: absolute;
+	opacity: 0;
+}
+
+.slideFadeRightEnter {
+	opacity: 0;
+	transform: translateX(30px) rotate(-80deg);
+}
+
+.slideFadeRightEnterActive {
+	transition: all 0.25s ease-in-out;
+	transition-delay: 0.1s;
+	transform: translateX(0px) rotate(0deg);
+	position: relative;
+	opacity: 1;
+}
+
+.slideFadeRightLeave {
+	transform: translateX(0px) rotate(0deg);
+}
+
+.slideFadeRightLeaveActive {
+	opacity: 0;
+	transition: all 0.25s ease-in-out;
+	transform: translateX(30px) rotate(-80deg);
+	position: absolute;
+}
+
+.slideOpacityEnter {
+	opacity: 0;
+}
+
+.slideOpacityEnterActive {
+	opacity: 1;
+	transition: all 0.25s ease-in-out;
+	transition-delay: 0.1s;
+	position: relative;
+}
+
+.slideOpacityLeave {
+	opacity: 0;
+	transform: translateX(-100%);
+}
+
+.slideOpacityLeaveActive {
+	transition: all 0.25s ease-in-out;
+	position: absolute;
+}
