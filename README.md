@@ -1,8 +1,10 @@
 # Interactive card app
 
+![](demo.gif)
+
 ## Links
 
-- Live Page(https://nikitakrv.github.io/weather/)
+- [Live Page](https://nikitakrv.github.io/interactive-card/)
 
 ## Built with
 
