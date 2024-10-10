@@ -2,7 +2,7 @@
 
 ## Links
 
-- Live Page: [Add live site URL here](https://your-live-site-url.com)
+- Live Page(https://nikitakrv.github.io/weather/)
 
 ## Built with
 
